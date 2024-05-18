@@ -3,14 +3,12 @@ import axios, { AxiosInstance } from 'axios';
 import { PetBreed } from '../../types/PetBreed';
 import { PetImage } from '../../types/PetImage';
 
-const defaultBaseUrl = 'https://api.thecatapi.com/v1';
-
 class TheCatApiServices {
   private baseUrl: string;
   private api: AxiosInstance;
 
   constructor() {
-    this.baseUrl = process.env.THE_DOG_BASE_URL ?? defaultBaseUrl;
+    this.baseUrl = process.env.THE_DOG_BASE_URL!;
     this.api = axios.create({ baseURL: this.baseUrl });
   }
 

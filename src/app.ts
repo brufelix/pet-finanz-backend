@@ -1,12 +1,15 @@
+import * as dotenv from 'dotenv';
+
+dotenv.config();
+
 import cors from 'cors';
-import dotenv from 'dotenv';
 import express from 'express';
 import { router } from './routes';
 import { connectToDatabase } from './config/database';
 
 class App {
-  private port = 3001;
   private app = express();
+  private port = process.env.PORT ?? 3001;
 
   constructor() {
     this.configureMiddleware();
@@ -16,8 +19,6 @@ class App {
   }
 
   private configureMiddleware() {
-    dotenv.config();
-
     this.app.use(cors());
     this.app.use(express.json());
     this.app.use(router);

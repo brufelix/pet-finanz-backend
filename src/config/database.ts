@@ -1,10 +1,10 @@
 import { connect } from 'mongoose';
 
-const dbURI = 'mongodb://localhost:27017/pets';
+const dbURI = process.env.DATABASE_URL;
 
 const connectToDatabase = async () => {
   try {
-    await connect(dbURI);
+    await connect(dbURI!);
 
     console.log('Connected to MongoDB');
   } catch (error) {
