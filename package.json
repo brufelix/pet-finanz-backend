@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsnd --exit-child src/app.ts",
+    "start": "NODE_ENV=production && tsc && node dist/app.js",
     "build": "tsup src"
   },
   "keywords": [],
