@@ -1,4 +1,5 @@
 import { Pet } from '../../types/Pet';
+import envs from '../../constants/envs';
 import axios, { AxiosInstance } from 'axios';
 import { PetBreed } from '../../types/PetBreed';
 import { PetImage } from '../../types/PetImage';
@@ -9,8 +10,9 @@ class TheCatApiServices {
   private api: AxiosInstance;
 
   constructor() {
-    this.apiKey = process.env.THE_DOG_API_KEY!;
-    this.baseUrl = process.env.THE_DOG_BASE_URL!;
+    this.apiKey = envs.api_key;
+    this.baseUrl = envs.base_url;
+
     this.api = axios.create({
       baseURL: this.baseUrl,
       headers: { 'x-api-key': this.apiKey },

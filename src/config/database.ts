@@ -1,11 +1,9 @@
 import { connect } from 'mongoose';
-
-const dbURI = process.env.DATABASE_URL;
-console.log(process.env);
+import envs from '../constants/envs';
 
 const connectToDatabase = async () => {
   try {
-    await connect(dbURI!);
+    await connect(envs.database_url);
   } catch (error) {
     throw error;
   }
