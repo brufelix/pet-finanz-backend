@@ -4,12 +4,17 @@ import { PetBreed } from '../../types/PetBreed';
 import { PetImage } from '../../types/PetImage';
 
 class TheCatApiServices {
+  private apiKey: string;
   private baseUrl: string;
   private api: AxiosInstance;
 
   constructor() {
+    this.apiKey = process.env.THE_DOG_API_KEY!;
     this.baseUrl = process.env.THE_DOG_BASE_URL!;
-    this.api = axios.create({ baseURL: this.baseUrl });
+    this.api = axios.create({
+      baseURL: this.baseUrl,
+      headers: { 'x-api-key': this.apiKey },
+    });
   }
 
   private async getPetImage(imageId: string) {
