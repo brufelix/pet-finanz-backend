@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsnd --exit-child src/app.ts",
-    "start": "NODE_ENV=production && tsc && node dist/app.js"
+    "dev": "tsnd --exit-child src/index.ts",
+    "start": "NODE_ENV=production && tsc && node dist/index.js"
   },
   "keywords": [],
   "author": "",
