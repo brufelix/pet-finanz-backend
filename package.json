@@ -1,11 +1,10 @@
 {
   "name": "pet-finanz-backend",
   "version": "1.0.0",
-  "main": "src/app.ts",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsnd --exit-child src/app.ts",
-    "start": "NODE_ENV=production && node dist/app.js"
+    "build": "tsup src"
   },
   "keywords": [],
   "author": "",
