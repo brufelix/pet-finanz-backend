@@ -9,7 +9,7 @@ class TheCatApiServices {
   private api: AxiosInstance;
 
   constructor() {
-    this.baseUrl = envs.base_url;
+    this.baseUrl = envs.base_url!;
 
     this.api = axios.create({
       baseURL: this.baseUrl,

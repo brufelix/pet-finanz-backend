@@ -1,5 +1,5 @@
-import { SalesRepository } from '../../repositories/sales';
 import { ISale } from '../../types/Sale';
+import { SalesRepository } from '../../repositories/sales';
 
 class SalesServices {
   private salesRepository: SalesRepository;
